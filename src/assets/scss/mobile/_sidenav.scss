@@ -1,0 +1,186 @@
+.sidenav {
+    width: 240px;
+    position: relative;
+    z-index: 100;
+    float: left;
+    height: 100vh;
+    padding-left: 20px;
+
+    &__logo {
+      background-color: rgba($color: #000000, $alpha: 0.9);
+      padding: 10px;
+      border: 1px solid white;
+      border-radius: 5px 5px 0 0;
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+    
+    &_toggle {
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    &__chevron {
+        position: absolute;
+        top: 13px;
+        right: 0;
+        text-align: center;
+        display: inline-block;
+        height: 2px;
+        width: 10px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 51%;
+            background: rgba($blue-text, 0.8);
+            transform: skew(0deg, 40deg);
+            transition: transform 0.4s;
+          }
+         &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50%;
+            background: rgba($blue-text, 0.8);
+            transform: skew(0deg, -40deg);
+            transition: transform 0.4s;
+          }
+    }
+
+    &__container {
+      width: 100%;
+      margin: 20px auto;
+      border-radius: 5px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      box-shadow: 2px -2px 20px -5px rgba(0,0,0,0.31);
+    }
+
+    &__list {
+      margin: 10px 0;
+      padding: 0 15px;
+      li {
+        list-style-type: none;
+        margin:0 ;
+        padding: 10px 0;
+        position: relative;
+        line-height: 10px;
+        cursor: pointer;
+        >&:first-child {
+          padding-top: 0;
+        }
+        a, p {
+            color: $navtext;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-bottom: 0px;
+            padding-bottom: 4px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &:hover {
+          &:before, p {
+            color: rgba($blue-text, 0.5);
+          }
+        }
+
+        &:before {
+          color: rgba($blue-text, 0.8);
+          font-family: $iconfont;
+          font-size: 1.6em;
+          font-weight: 300;;
+          display: inline-block;
+          padding-right: 10px;
+          position: relative;
+          top: 0px;;
+        }
+
+        ul {
+            border-radius: 3px;
+            border:1px solid rgba($blue-text, 0.6) ;
+            overflow: hidden;
+           transform: scaleY(0);
+           transform-origin: top;
+            transition: max-height 0.5s, transform 0.5s, opacity 0.5s ease;
+            max-height: 0;
+            opacity: 0;
+            padding: 0px;
+            margin: 0 ;
+            width: 100%;
+            li {
+                list-style: none;
+                border-bottom: 1px solid $blue-text;
+                padding: 8px 5px ;
+                margin: 0;
+                &:last-child {
+                    border-bottom: none;
+                }
+                &:hover {
+                    background: rgba($blue-text, 0.1);
+                }
+                a {
+                    font-size: 1.2em;
+                    color: rgba($blue-text, 0.6) ;
+                    text-transform: inherit;
+                    text-decoration: none;
+                    font-weight: 300;
+                }
+                &:after, &:before {
+                    display: none;
+                }
+            }
+        }
+
+        &.submenu {
+            &.open {
+                >ul {
+                    // transition: opacity 0.3s 0ms;
+                    // opacity: 1;
+
+
+                    transform: scaleY(1);
+                    transition: max-height 0.5s, transform 0.5s, opacity 0.5s ease;
+                    max-height: 400px;
+                    opacity: 1;
+                }
+
+                .sidenav__chevron {
+                    &:before {
+                        transform: skew(0deg, -40deg);
+                        transition: transform 0.4s;
+                    }
+                    &:after {
+                        transform: skew(0deg, 40deg);
+                        transition: transform 0.4s;
+                    }
+                }
+
+
+            }
+            &:hover {
+                &:after, a {
+                color: rgba($blue-text, 0.5);
+                }
+            }
+
+            a {
+                color: rgba($blue-text, 0.8);
+                font-size: 1.2em;
+
+            }
+        }
+      }
+    }
+  }

@@ -1,0 +1,60 @@
+
+.dashboard {
+    position: relative;
+    padding-top: 10px  ;
+    padding-bottom: 10px  ;
+
+    &__card {
+        border-radius: 5px;
+        padding: 0px;
+        background: $white;
+        
+
+        &:last-child {
+          margin-right: 0;
+        }
+    }
+
+    &--icon {
+        img{
+          width: 40px;
+        }
+    }
+
+    &--subtitle {
+        font-size: 1.3em;
+        font-family: $font-secondary;
+        font-weight: 900;
+        margin: 0 0 6px
+    }
+
+    &--title {
+        font-size: 1.2em;
+        font-family: $font-secondary;
+        font-weight: 700;
+        margin: 0  ;
+        text-transform: uppercase;
+    }
+
+    &--text {
+        color: $green;
+        font-family: $font-secondary;
+        font-weight: 600;
+        font-size: 1.2em;
+    }
+
+    &__summary {
+        flex: 1 0 auto;
+    }
+
+    &__cardbody {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+
+    &__icon {
+        flex: 0 0 70px;
+        margin-right: 10px;
+    }
+  }

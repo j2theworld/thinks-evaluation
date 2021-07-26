@@ -1,0 +1,122 @@
+.navbar {
+    padding: 0;
+
+    >a {
+        font-size: 1.2em;
+        color: $white;
+    }
+
+    .navbar-collapse {
+      float: left;
+    }
+
+    &__account {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        p {
+            color: white;
+            font-size: 12px;
+            font-weight: 200;
+            text-transform: uppercase;
+            font-family: $font-secondary;
+            position: relative;
+            top: 5px;
+            margin-bottom: 0;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        strong{
+            font-weight: 500;
+            font-family: $font;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        h1 {
+            font-weight: 900;
+            font-family: $font-secondary;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 0;
+            line-height: 13px;
+        }
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+      li.nav-item {
+        position: relative;
+          a {
+              padding-right: 20px;
+              >img, >object {
+                width: 3em;
+                height: 3em;
+              }
+              div {
+                  font-family: "typicons";
+                  font-size: 30px;
+                  color: white;
+              }
+          }
+          .nav__dropdown {
+            position: absolute;
+            border: none;
+            padding: .5rem ;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            min-width: 10rem;
+            margin: 0.125rem 0 0;
+            font-size: 1rem;
+            color: #212529;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 0.25rem;
+            opacity: 0;
+            transition: visibility 0.4s, opacity 0.4s ;
+            &:last-child {
+            right: 0;
+            left: inherit;
+            }
+
+            a.dropdown-item, button.dropdown-item  {
+                font-size: 12px;
+                font-family: $font-secondary;
+                border-bottom: 1px solid #e8ebef;
+                padding: .25rem ;
+                color: $navtext ;
+                &:last-child {
+                    border-bottom: none
+                }
+
+                &.logout {
+                background-color: $green;
+                color: white;
+                margin: 3px 0;
+                border-radius: 4px;
+                }
+            }
+
+            .dropdown-divider {
+                border-top: none;
+            }
+
+            &.open {
+
+                opacity: 1;
+            }
+
+          }
+      }
+    }
+}

@@ -1,0 +1,117 @@
+.login {
+    position: relative;
+    height: 100vh;
+    display: block;
+    align-self: stretch;
+
+    &__hero_container {
+        width: 100%;
+        position: relative;
+    }
+
+    &__container {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__hero {
+        background-color: black;
+       
+        border-radius: 10px;
+        min-height: 100px;
+        box-shadow: 0px 0px 3px 1px rgba(255,255,255,0.75);
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        justify-content: space-between;
+        flex-basis: 100%;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        transition: transform 0.6s, ;
+        transform:  translateY(0px);
+        &.open {
+            transform:  translateY(-20px);
+        }
+    }
+
+    &__login_btn {
+        background: white;
+        font-weight: 400;
+        border-color: white;
+        font-size: 1.3em;
+        color: $green;
+        text-transform: uppercase;
+        &--white {
+            background: white;
+            border-color:white;
+            color: $green
+        }
+
+        &:hover {
+            background-color: $green;
+            border-color: white;;
+            color: white;
+        }
+    }
+
+    &__logo {
+        float: left;
+    }
+
+    &__logon {
+        float: right;
+        width: 70px;
+    }
+
+    &__login_container {
+        background: $green;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        transition: transform 0.6s,  opacity 0.3s;
+        transform:  translateY(-178px);
+        opacity: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        &.open {
+            opacity: 1;
+            transform:  translateY(10px);
+            &:before {
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 15px solid  $green;
+                position: absolute;
+                top: -15px;
+                right: 45px;
+            }
+        }
+
+        &:before {
+            content: "";
+        }
+    }
+
+    &__login_form {
+        flex: 0 1 75%;
+
+    }
+
+    &__submit {
+        flex: 0 1 25%;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-end;
+        button {
+            width: 70px;
+        }
+    }
+}

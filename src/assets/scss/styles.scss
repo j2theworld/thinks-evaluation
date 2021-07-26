@@ -1,0 +1,30 @@
+
+@import './config/imports';
+@import './mobile/index';  
+
+
+ // TABLET ONLY STYLES
+@media  (min-width: 768px) and (max-width: 1040px) {
+	@import "./tablet/index"; 
+}
+
+@media  (min-width: 1041px) {
+	@import "./desktop/index"; 
+} 
+
+
+html, body {
+	height: 100%
+}
+
+body {
+	font-size: 10px;
+	font-family:$font;
+	background: $lgrey;
+	-webkit-font-smoothing: subpixel-antialiased ;
+    -webkit-transform: none !important;	
+	-webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+	 font-weight: 600;
+}
+

@@ -1,0 +1,12 @@
+.dashboard {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+
+    &__card {
+        flex: 1 0 auto;
+        margin-right: 15px;
+    }
+}
